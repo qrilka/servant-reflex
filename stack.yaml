@@ -1,0 +1,30 @@
+# For more information, see: https://github.com/commercialhaskell/stack/blob/release/doc/yaml_configuration.md
+compiler: ghcjs-0.2.0.20160414_ghc-7.10.3
+compiler-check: match-exact
+setup-info:
+  ghcjs:
+    source:
+      ghcjs-0.2.0.20160414_ghc-7.10.3:
+        url: https://s3.amazonaws.com/ghcjs/ghcjs-0.2.0.20160414_ghc-7.10.3.tar.gz
+        sha1: 6d6f307503be9e94e0c96ef1308c7cf224d06be3
+
+resolver: nightly-2016-04-14
+
+# Local packages, usually specified by relative directory name
+packages:
+- '.'
+- '../reflex-dom'
+- location:
+    git: git@github.com:ryantrinkle/reflex.git
+    commit: f8338f6b68c9be4e8dcddbbab2098aeffa018535
+- location:
+    git: git@github.com:ghcjs/ghcjs-base.git
+    commit: 831bbe58540158146c3f9b4e2fa960d82b11a1b6
+
+extra-deps:
+- ref-tf-0.4
+- aeson-0.11.1.4
+- ghcjs-base-0.2.0.0
+- servant-0.5
+- servant-blaze-0.5
+- servant-server-0.5
